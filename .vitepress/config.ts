@@ -34,6 +34,21 @@ const nav: ThemeConfig['nav'] = [
     link: '/api/'
   },
   {
+    text: '增补API',
+    activeMatch: `^/ex-api/`,
+    items: [
+      { text: '@vue/shared', link: '/ex-api/shared' },
+      { text: '@vue/reactivity', link: '/ex-api/reactivity' },
+      { text: '@vue/runtime-core', link: '/ex-api/runtime-core' },
+      { text: '@vue/runtime-dom', link: '/ex-api/runtime-dom' },
+      { text: '@vue/compiler-core', link: '/ex-api/compiler-core' },
+      { text: '@vue/compiler-dom', link: '/ex-api/compiler-dom' },
+      { text: '@vue/compiler-sfc', link: '/ex-api/compiler-sfc' },
+      { text: '@vue/compiler-ssr', link: '/ex-api/compiler-ssr' },
+      { text: 'vue', link: '/ex-api/vue' }
+    ]
+  },
+  {
     text: '演练场',
     link: 'https://play.vuejs.org'
   },
