@@ -1,8 +1,20 @@
+---
+title:  \@vue/shared 共享工具函数
+---
+
+<script setup lang="ts">
+import * as shared from '@vue/shared'
+
+console.log("shared=", shared)
+</script> 
+
 # @vue/shared 共享工具函数
 
 ::: info 介绍
 `@vue/shared`中的所有函数都是一些短小且在其它包中共享使用的函数。在普通用户工程中，尤其是组件库开发中，就容易会用到其中某些函数，比如转换驼峰。 与其自己项目中重新编写这些小函数，不如花点时间熟悉`@vue/shared`包，引用其中的函数，这样质量更好更可靠。
 :::
+
+
 
 ## **4个常量值** {#CONST}
 
@@ -58,8 +70,7 @@ isSelfCloseTag('input') // true
 
 ## **PatchFlags**枚举值 {#PatchFlags}
 
-`Patch flags`是编译器生成的优化提示信息。 当一个具有动态子元素的`block`进行diff时，如果有该标记信息，
-表明该render函数是编译生成的，diff算法就可以按需更新这些标记。
+`Patch flags`是编译器生成的优化提示信息。 当一个具有动态子元素的`block`进行diff时，如果有该标记信息，表明该render函数是编译生成的，diff算法就可以按需更新这些标记。
 
 阅读 `runtime-core/src/renderer.ts` 下的 `patchElement`函数， 了解如何使用`PatchFlags` 的。
 
@@ -86,7 +97,7 @@ enum PatchFlags {
 
 ## **PatchFlagNames** {#PatchFlagNames}
 
-一个数字为键值的对象，所有值都基本等同于上面的`PatchFlag`, 除了 `CACHED`
+`DEV` 模式下才有的变量。一个数字为键值的对象，所有值都基本等同于上面的`PatchFlag`, 除了 `CACHED`。
 
 ```typescript
   {
@@ -96,4 +107,36 @@ enum PatchFlags {
 
     -1: 'HOISTED' // PatchFlag中的值为： CACHED
   }
+```
+
+## **ShapeFlags** {#ShapeFlags}
+
+枚举值：节点的Shape。当使用`createVNode`等函数创建了一个有效的`VNode`对象时，它的`shapeFlag属性`记录了该节点的类型，一个节点可以同时有多个shape值，比如 `ShapeFlags.ELEMENT | ShapeFlags.TEXT_CHILDREN`,表示当前节点是一个元素，且拥有一个文字节点。
+
+```typescript
+enum ShapeFlags {
+    ELEMENT = 1,
+    FUNCTIONAL_COMPONENT = 2,
+    STATEFUL_COMPONENT = 4,
+    TEXT_CHILDREN = 8,
+    ARRAY_CHILDREN = 16,
+    SLOTS_CHILDREN = 32,
+    TELEPORT = 64,
+    SUSPENSE = 128,
+    COMPONENT_SHOULD_KEEP_ALIVE = 256,
+    COMPONENT_KEPT_ALIVE = 512,
+    COMPONENT = 6
+}
+```
+
+## **SlotFlags** {#SlotFlags}
+
+枚举值：插槽的类型。 todo: 补充该值的位置 _, 用途。
+
+```typescript
+enum SlotFlags {
+    STABLE = 1,
+    DYNAMIC = 2,
+    FORWARDED = 3
+}
 ```

@@ -8,6 +8,9 @@ dependencies:
   '@vue/repl':
     specifier: ^4.3.1
     version: 4.4.2
+  '@vue/shared':
+    specifier: ^3.5.8
+    version: 3.5.8
   '@vue/theme':
     specifier: ^2.2.12
     version: 2.3.0(@algolia/client-search@5.5.3)(search-insights@2.17.2)(vitepress@1.3.4)(vue@3.5.7)
@@ -914,7 +917,7 @@ packages:
       '@volar/language-core': 2.4.5
       '@vue/compiler-dom': 3.5.7
       '@vue/compiler-vue2': 2.7.16
-      '@vue/shared': 3.5.7
+      '@vue/shared': 3.5.8
       computeds: 0.0.1
       minimatch: 9.0.5
       muggle-string: 0.4.1
@@ -960,6 +963,9 @@ packages:
 
   /@vue/shared@3.5.7:
     resolution: {integrity: sha512-NBE1PBIvzIedxIc2RZiKXvGbJkrZ2/hLf3h8GlS4/sP9xcXEZMFWOazFkNd6aGeUCMaproe5MHVYB3/4AW9q9g==}
+
+  /@vue/shared@3.5.8:
+    resolution: {integrity: sha512-mJleSWbAGySd2RJdX1RBtcrUBX6snyOc0qHpgk3lGi4l9/P/3ny3ELqFWqYdkXIwwNN/kdm8nD9ky8o6l/Lx2A==}
 
   /@vue/theme@2.3.0(@algolia/client-search@5.5.3)(search-insights@2.17.2)(vitepress@1.3.4)(vue@3.5.7):
     resolution: {integrity: sha512-eKd4ipY6i6P2XD2iRVgbxs936g7pesEY2AgNX24C/sjzcmCnm48J7uV8xKXI2du2qfA89/r5QQp7bqZVf2Tekw==}
@@ -2476,7 +2482,7 @@ packages:
       '@types/markdown-it': 14.1.2
       '@vitejs/plugin-vue': 5.1.4(vite@5.4.7)(vue@3.5.7)
       '@vue/devtools-api': 7.4.5
-      '@vue/shared': 3.5.7
+      '@vue/shared': 3.5.8
       '@vueuse/core': 11.1.0(vue@3.5.7)
       '@vueuse/integrations': 11.1.0(focus-trap@7.6.0)(vue@3.5.7)
       focus-trap: 7.6.0
