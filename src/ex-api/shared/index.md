@@ -196,7 +196,7 @@ const name=genPropsAccessExp('name') // __props.name
 
 ## **generateCodeFrame** {#generateCodeFrame}
 
-使在一些编译链工具，遇到语法错误时，经常会看到终端打印报错的代码行，并且在下方标 ^^^^ 等指示，这种功能为`CodeFrame`。本函数是就一个简易版的标记`CodeFrame`的方法。
+使在一些编译链工具，遇到语法错误时，经常会看到终端打印报错的代码行，并且在下方标 ^^^^ 等指示，这种功能为`CodeFrame`。本函数是就一个简易版的标记`CodeFrame`的方法。用于在编译`sfc`时，报告错误的位置。
 
 ```typescript
 const source = 'const a b = 12'
