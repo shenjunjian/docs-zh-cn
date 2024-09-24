@@ -208,42 +208,48 @@ const frame = generateCodeFrame(source, 6,9) // frame输出如下：
 
 ## **getEscapedCssVarName** {#getEscapedCssVarName}
 
-xxx
+在`<style>` 标签支持使用 `v-bind` CSS 函数将 CSS 的值链接到动态的组件状态,实际的值会被编译成哈希化的 CSS 自定义属性。 此函数即为生成自定义属性名。
 
 ```typescript
-
+const ret = getEscapedCssVarName('state.msg') // 'state\\.msg'
 ```
 
-## **getGlobalThis** {#getGlobalThis}
+## **c** {#getGlobalThis}
 
-xxx
+由于Vue可能运行于多种环境下，`Node` 下，支持 `global/globalThis` 变量， 浏览器下，支持 `globalThis/window`变量， 在`web-worker`时，支持`self` 。
+该函数返回正确的 globalThis 变量。
 
-```typescript
-
-```
 
 ## **hasChanged** {#hasChanged}
 
-xxx
+使用 `Object.is` 判断两个值是否变化了,就是按引用判断。
 
 ```typescript
+hasChanged(1, 1)  // false
+hasChanged(null,null)  // false
+hasChanged(NaN,NaN)  // false
+hasChanged(window,window)  // false
+hasChanged( void 0, undefined) // false
 
+hasChanged(1, '1')  // true
+hasChanged([1], [1])  // true
+hasChanged([1], [1])  // true
 ```
 
 ## **hasOwn** {#hasOwn}
 
-xxx
+`Object.prototype.hasOwnProperty` 的别名
 
 ```typescript
-
+hasOwn({ a: 1}, 'a') // true
 ```
 
 ## **hyphenate** {#hyphenate}
 
-xxx
+将驼峰字符串转为连字符形式。
 
 ```typescript
-
+hyphenate('onClick') // on-click
 ```
 
 ## **includeBooleanAttr** {#includeBooleanAttr}
