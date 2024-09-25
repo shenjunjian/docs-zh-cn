@@ -254,59 +254,52 @@ hyphenate('onClick') // on-click
 
 ## **includeBooleanAttr** {#includeBooleanAttr}
 
-xxx
+判断组件的bool属性的当前值。  比如： `<select multiple> compiles to { multiple: '' }`
+- `multiple` 为 true 或者 为 '' 都表示这个属性是真值。
+- `multiple` 为 false ，才表示该属性值为假值。
 
 ```typescript
-
+includeBooleanAttr('')  // true
+includeBooleanAttr(false) // false
 ```
 
 ## **invokeArrayFns** {#invokeArrayFns}
 
-xxx
+调用数组内所有函数方法。一般用于组件的生命周期钩子的调用。
 
 ```typescript
+const fns=[console.log]
 
+invokeArrayFns(fns, 1,2,3,4)
 ```
 
 ## **isArray** {#isArray}
 
-xxx
-
-```typescript
-
-```
+`Array.isArray` 的别名
 
 ## **isBooleanAttr** {#isBooleanAttr}
 
-xxx
+`HTML`中，判断是boolean 类型的属性函数，比如： `disable, loop ,autofocus，hidden` 等
 
 ```typescript
-
+isBooleanAttr('disabled') // true
 ```
 
 ## **isBuiltInDirective** {#isBuiltInDirectivev}
 
-xxx
+判断是否为内置的指令， 内置指令为： `bind,cloak,else-if,else,for,html,if,model,on,once,pre,show,slot,text,memo`
 
 ```typescript
-
+isBuiltInDirective('cloak') // true
 ```
 
 ## **isDate** {#isDate}
 
-xxx
-
-```typescript
-
-```
+判断是否为日期类型， [object Date]
 
 ## **isFunction** {#isFunction}
 
-xxx
-
-```typescript
-
-```
+判断是否为函数, `typeof val === 'function'`
 
 ## **isGloballyAllowed** {#isGloballyAllowed}
 
