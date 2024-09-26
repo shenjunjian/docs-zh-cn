@@ -279,7 +279,7 @@ invokeArrayFns(fns, 1,2,3,4)
 
 ## **isBooleanAttr** {#isBooleanAttr}
 
-`HTML`中，判断是boolean 类型的属性函数，比如： `disable, loop ,autofocus，hidden` 等
+`isBooleanAttr` 判断是否boolean 类型的属性，比如： `disable, loop ,autofocus，hidden` 等
 
 ```typescript
 isBooleanAttr('disabled') // true
@@ -303,91 +303,51 @@ isBuiltInDirective('cloak') // true
 
 ## **isGloballyAllowed** {#isGloballyAllowed}
 
-xxx
+判断一个变量是否在模板中能使用。 可以使用的`
+ Infinity,undefined,NaN,isFinite,isNaN,parseFloat,parseInt,decodeURI, 
+  'decodeURIComponent,encodeURI,encodeURIComponent,Math,Number,Date,Array, 
+  'Object,Boolean,String,RegExp,Map,Set,JSON,Intl,BigInt,console,Error
+`。
 
-```typescript
+比如 `window, globalThis` 都不能使用， `setTimeout,eval, Function` 也不能使用。
 
-```
+eg. 它代替了旧函数`isGloballyWhitelisted`。
 
-## **isGloballyWhitelisted** {#isGloballyWhitelisted}
+## **isHTMLTag/isSVGTag/isMathMLTag/isVoidTag** {#isHTMLTag}
 
-xxx
+判断是否为相应的有效标签。 
 
-```typescript
-
-```
-
-## **isHTMLTag** {#isHTMLTag}
-
-xxx
-
-```typescript
-
-```
+`isVoidTag` 判断是否为自闭合标签，比如 `br,hr,link,input` 等。
 
 ## **isIntegerKey** {#isIntegerKey}
 
-xxx
-
-```typescript
-
-```
+判断一个值是否为一个“字符串形式的整数”，比如 `"10"`。
 
 ## **isKnownHtmlAttr** {#isKnownHtmlAttr}
 
-xxx
-
-```typescript
-
-```
+判断字符串是否在所有HTML标签的有效属性的集合。 比如 `id,class,style,name,value,type` 等。
 
 ## **isKnownMathMLAttr** {#isKnownMathMLAttr}
 
-xxx
+是否为有效的`MathML`的属性
 
-```typescript
 
-```
 
 ## **isKnownSvgAttr** {#isKnownSvgAttr}
 
-xxx
-
-```typescript
-
-```
+是否为有效的`Svg`的属性
 
 ## **isMap** {#isMap}
 
-xxx
-
-```typescript
-
-```
-
-## **isMathMLTag** {#isMathMLTag}
-
-xxx
-
-```typescript
-
-```
+判断依据： [object Map]
 
 ## **isModelListener** {#isModelListener}
 
-xxx
-
-```typescript
-
-```
+判断是否为 `onUpdate:` 打头的字符串
 
 ## **isObject** {#isObject}
 
-xxx
-
-```typescript
-
-```
+判断依据： 非null ，typeof val === 'object'
 
 ## **isOn** {#isOn}
 
@@ -445,13 +405,7 @@ xxx
 
 ```
 
-## **isSVGTag** {#isSVGTag}
-
-xxx
-
-```typescript
-
-```
+ 
 
 ## **isSet** {#isSet}
 
@@ -478,14 +432,6 @@ xxx
 ```
 
 ## **isSymbol** {#isSymbol}
-
-xxx
-
-```typescript
-
-```
-
-## **isVoidTag** {#isVoidTag}
 
 xxx
 
